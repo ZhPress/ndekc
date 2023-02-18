@@ -1,0 +1,17 @@
+@import 'head';
+@import 'left-menu';
+@import 'footer';
+@import 'outlet';
+@import 'vars';
+
+body {
+    font: .9em "Fira Sans", sans-serif;
+    background: url('../img/moroccan-flower.png');
+    
+    @media only screen and (min-width : $breakpoint_sm) and (max-width : 1000px) {
+            font-size: .7em;
+    }
+    @media only screen and (max-width : $breakpoint_sm) {
+        font-size: .6em;
+}
+}

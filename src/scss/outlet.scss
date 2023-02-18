@@ -1,0 +1,62 @@
+$leftMenuColor: rgba(14, 116, 233, 0.4);
+
+main {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    min-height: 110vh;
+    margin-bottom: 3%;
+    @media only screen and (max-width : $breakpoint_sm) {
+        min-height: 60vh;
+    }
+    .content {
+        flex-basis: 70%;
+        margin-top: 3%;
+        margin-left: 1%;
+        padding: 0 2%;
+        font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+        text-align: justify;
+        @media only screen and (max-width : $breakpoint_sm) {
+            flex-basis: 90%;
+        }
+        label {
+            width: 100%;
+            height: auto;
+            background: rgba(255, 255, 255, .7);
+            z-index: 2;
+            display: inline-block;
+            text-align: justify;
+            padding: 5px;
+          }
+        h2 {
+            text-align: center;
+        }
+        p {
+            text-indent: 5%;
+        }
+        ul li {
+            padding-bottom: 1%;
+            list-style: outside;
+            font-size: 1.1em;
+        }
+        img {
+            width: 100%;
+            display: block;
+            margin: auto;
+        }
+        a {
+            color: rgb(27, 28, 26);
+            &:hover {
+                color:rgb(63, 54, 146);
+            }
+        }
+        .table_content td {
+            width: 20%;
+            padding-left: 10%;
+            font-weight: 600;
+        }
+        .td_right {
+             padding-left: 5%;
+        }
+    }
+}

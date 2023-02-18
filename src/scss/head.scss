@@ -1,0 +1,134 @@
+@import 'vars';
+
+@mixin head_div ($width) {
+   position: absolute;
+   height: 100%;
+   width: $width;
+}
+
+.head {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    height: 200px;
+    background: rgba(0,0,255,.7);
+    color: azure;
+     
+     .trident {
+        @include head_div(20%);
+        background: url('https://upload.wikimedia.org/wikipedia/commons/7/79/%D0%A2%D1%80%D0%B8%D0%B7%D1%83%D0%B1.png') center no-repeat;
+        background-size: 60%;
+        left: 0%;
+     }
+     .emblem {
+        @include head_div(20%);
+        background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/%D0%93%D0%B5%D1%80%D0%B1_%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D0%BE%D0%B6%D1%8C%D1%8F_2003_%D0%B3%D0%BE%D0%B4%D0%B0.svg/800px-%D0%93%D0%B5%D1%80%D0%B1_%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D0%BE%D0%B6%D1%8C%D1%8F_2003_%D0%B3%D0%BE%D0%B4%D0%B0.svg.png') center no-repeat;
+        background-size: 70%;
+        right: 0%;
+        top: 0%;
+     }
+     .building {
+        @include head_div(20%);
+        background: url('https://www.rada.gov.ua/img/rada-logo.png') center no-repeat;
+        background-size: 50%;
+        top: -15%;
+        left: 40%;
+        font-size: .7em;
+        @media only screen and (max-width : $breakpoint_md) {
+         display: none;
+        }
+     }
+     p {
+        position: absolute;
+        text-align: center;
+        font-weight: bold;
+        bottom: 7%;
+        left: 32%;
+        right: 32%;
+     }
+}
+   
+   header {
+    display: flex;
+    width: 90%;
+    height: 50px;
+    margin: 5px auto;
+    background: #e7e41c;
+    text-align: center;
+
+    div {
+       flex-basis: 20%;
+       margin: 0 1%;
+       height: 50px;
+       display: table;
+        &:hover {
+            transition: .5s;
+            box-shadow: 5px 0 5px rgba(10, 30, 211, 0.5), 0 5px 5px rgb(17, 17, 17, .5);
+        }
+        &:hover > a {
+         animation: pulse 1s ;
+         animation-iteration-count: .5;
+         animation-fill-mode: forwards;
+        }
+        a {
+            font-weight: bold;
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+    a {
+       color: rgb(17, 17, 17);
+       text-decoration: none; 
+    }
+    .activeLink {
+        color: blue;
+    }
+}
+    
+@media only screen and (min-width : $breakpoint_md) and (max-width : $breakpoint_xl) {
+   .head {
+      height: 160px; 
+   }    
+   .trident {
+      @include head_div(20%);
+      background-size: 70%;
+   }  
+}
+@media only screen and (min-width : $breakpoint_sm) and (max-width : $breakpoint_md) {
+   .head {
+      height: 120px; 
+      p {
+         font-weight: bold;
+         bottom: 20%;
+         left: 24%;
+         right: 24%;
+      }
+   }  
+   header {
+      height: 40px;
+      div {
+         height: 40px;
+         font-size: .9em;
+      }
+   }
+}
+
+@media only screen and (max-width : $breakpoint_sm) {
+   .head {
+      height: 80px; 
+      p {
+         font-size: .9em;
+         font-weight: bold;
+         bottom: 20%;
+         left: 20%;
+         right: 20%;
+      }
+      header {
+         height: 30px;
+         div {
+            height: 30px;
+            font-size: .7em;
+         }
+      }
+   }  
+}

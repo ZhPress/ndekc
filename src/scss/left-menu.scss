@@ -1,0 +1,158 @@
+@import 'vars';
+
+$leftMenuColor: rgba(14, 116, 233, 0.4);
+
+
+    #left-menu {
+        position: relative;
+        flex-basis: 20%;
+        margin: 3% 5%;
+        @media only screen and (max-width : $breakpoint_md) {
+            font-size: .85em;
+        }
+        #ul_left {
+            width: 100%;
+            display: block;
+            position: absolute;
+            margin: 0; 
+            padding: 0;
+            font-weight: bold;
+            color: rgb(80, 35, 122);
+            .li_left_passive {
+                position: relative;
+                background-color: $leftMenuColor;
+                box-shadow: 1px 3px 5px rgba(206, 202, 202, 0.5);
+                height: 50px;
+                line-height: 50px;
+                margin-bottom: 5px;
+                list-style: none;
+                cursor: pointer;
+                border-radius: 5px;
+                border: 1px solid #fff;
+                &:hover {
+                    background-color: rgba(240, 236, 28, .4);
+                    box-shadow: 0 5px 5px rgba(54, 54, 54, 0.5), inset 0 5px 5px rgba(236, 232, 232, 0.5);
+                    transition: .2s;
+                }
+                .a_left {
+                    text-decoration: none;
+                    display: inline-block;
+                    height: 100%;
+                    width: 115%;
+                    margin-left: 5%;
+                }
+                .a_left:active {
+                    color: rgb(80, 35, 122);
+                }
+            }
+
+            .li_left_active{
+                height: 50px;
+                line-height: 50px;
+                margin-bottom: 5px;
+                list-style: none;
+                cursor: pointer;
+                border-radius: 5px;
+                border: 1px solid #fff;
+                background-color: rgba(240, 236, 28, .7);
+                box-shadow: 1px 3px 5px rgba(206, 202, 202, 0.5);
+                scale: 1.05;
+                text-align: center;
+                .activeLeft {
+                    position: relative;
+                    display: inline-block;
+                    text-decoration: none;
+                    color: rgb(0, 0, 255);
+                    z-index: 10;
+                    scale: 1.05;
+                }
+            }
+
+            #li_composite {
+                height: 50px;
+                width: 140%;
+                line-height: 50px;
+                border: none;
+                margin-bottom: 5px;
+                list-style: none;
+                cursor: pointer;
+                border-radius: 5px;
+                overflow-y: hidden;
+                transition: all 1s;
+                margin-left: -5px;              
+                &:hover {
+                    height: 300px;
+                    border: none;
+                }
+                @media only screen and (max-width : 760px) {
+                    display: none;
+                }
+                .a_public1 {
+                    display: block;
+                    text-decoration: none;
+                    text-indent: 5%;
+                    width: 77%;
+                    border: 1px solid #fff;
+                    border-radius: 5px;
+                    line-height: 50px;
+                    margin-left: 5px;
+                    margin-bottom: 1%;
+                    background-color: $leftMenuColor;
+                    transition: all 1s;
+                    &:hover {
+                        background-color: rgba(240, 236, 28, .4);
+                        box-shadow: 0 5px 5px rgba(54, 54, 54, 0.5), inset 0 5px 5px rgba(236, 232, 232, 0.5);
+                        border: 1px solid #fff;
+                        scale: 1.05;
+                    }
+                }
+                .a_public {
+                    display: block;
+                    width: 80%;
+                    border: 1px solid rgb(66, 66, 66);
+                    margin-left: 5%;
+                    font-size: .8em;
+                    margin-top: 1%;
+                    border-radius: 5px;
+                    line-height: 40px;
+                    padding-left: 10px;
+                    cursor: pointer;
+                    background-color: $leftMenuColor;
+                    transition: all .5s;
+                    text-decoration: none;
+                    &:hover {
+                        background-color: rgba(240, 236, 28, .4);
+                        scale: 1.03;
+                    }
+                    @media only screen and (min-width : $breakpoint_md) and (max-width : $breakpoint_xl) {
+                        line-height: 15px;
+                    }
+                }
+                .active_public {
+                      display: block;
+                      width: 80%;
+                      border: 1px solid rgb(70, 70, 70);
+                      font-size: .8em;
+                      margin-top: 1%;
+                      border-radius: 5px;
+	                  line-height: 40px;
+	                  padding-left: 10px;
+	                  cursor: pointer;
+                      background-color: rgba(240, 236, 28, .7);
+                      margin: 1% 5%;
+                      text-decoration: none;
+                      scale: 1.05;
+                      @media only screen and (min-width : $breakpoint_md) and (max-width : $breakpoint_xl) {
+                        height: 30px;
+                        line-height: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width : $breakpoint_md) and (max-width : $breakpoint_xl) {
+        #publicSectionLine {
+            display: none;
+        }
+    }
